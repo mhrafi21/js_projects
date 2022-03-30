@@ -1,0 +1,32 @@
+.container{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabs{
+    width:500px;
+    height: 100px;
+    overflow: hidden;
+}
+.tab .title{
+    display: flex;
+    column-gap: 60px;
+}
+.des{
+    width:100%;
+    height: 100%;
+    opacity: none;
+    visibility: hidden;
+    position: absolute;
+    transition:500ms ease;
+    transform:translateX(-500px);
+}
+.des.show{
+    opacity: 1;
+    visibility: visible;
+    transform:translateX(0px);
+
+}

@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Number</title>
+    <style>
+        input{
+            padding:15px;
+            border:none;
+            outline: none;
+            background-color: f4f4f4;
+            border-radius:5px;
+            border: 1px solid black;
+
+        }
+        input:focus{
+          background-color: #fafafa;
+        }
+        .text{
+            margin:0;
+            padding:0;
+            margin-left: 10px;
+            font-family: sans-serif;
+            font-size: 14px;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .text.active{
+            opacity: 1;
+            visibility: visible;
+        }
+        .perfectNum{
+            margin:0;
+            padding:0;
+            margin-left: 10px;
+            font-family: sans-serif;
+            font-size: 14px;
+            opacity: 0;
+            visibility: hidden;
+            overflow: hidden;
+        }
+        .perfectNum.activ{
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="Phone Number" id="number">
+    <div class="perfectNum" id = "perfect" >Success 11 Digit</div>
+    <div><p id = "alertNum" class = "text">Warnning : Type 11 digit!</p></div>
+
+
+    <script>
+        const number = document.getElementById('number');
+        const alertNum  = document.getElementById("alertNum");
+        const perfect = document.getElementById('perfect');
+
+        number.addEventListener('input' , ()=>{
+            if(number.value.length > 11){
+                    number.style.color = "red";
+                    alertNum.classList.add("active");
+                    alertNum.style.color = "red"
+                }else{
+                    
+                    alertNum.classList.remove("active");
+                    number.style.color = "black";
+
+                }
+                if(number.value.length === 11){
+                    perfect.classList.add("activ");
+                    perfect.style.color = "green";
+                }else{
+                    perfect.classList.remove("activ");
+                }
+        })
+    </script>
+</body>
+</html>

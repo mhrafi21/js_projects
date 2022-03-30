@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop-Up</title>
+
+    <style>
+        section{
+            width:300px;
+            height: auto;
+            margin:0 auto;
+        }
+        .popUp{
+            width:100%;
+            visibility: hidden;
+            opacity: 0;
+            transition:all 600ms ease-in;
+
+            
+        }
+        .popUp.hide{
+            visibility: visible;
+            opacity: 1;
+        }
+        .container{
+            background-color: blanchedalmond;
+            position: relative;
+            border-radius:10px;
+            
+
+        }
+        .container .text{
+            padding:0px 30px 4px;
+        }
+        .img img{
+            height:250px;
+            width:100%;
+            object-fit: cover;
+        }
+        #close{
+            position: absolute;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="popUp" id= 'popUp'>
+            <div class="container" id = 'container'>
+                <div class="row">
+                    <div class="img">
+                        <img src="img/load.jpg" >
+                    </div>
+                    <div class="text">
+                        <h4>This is a title</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid cum consequuntur repudiandae nulla in id ullam aut aspernatur ratione. Mollitia natus ex hic. Impedit illum fugit eaque atque voluptatem cum!</p>
+                    </div>
+                </div>
+                <button id = "close">Close</button>
+            </div>
+        </div>
+        <button id = "open">Open</button>
+
+    </section>
+   
+
+
+    <script>
+        const popUp = document.getElementById('popUp');
+        const open = document.getElementById('open');
+        const close = document.getElementById('close');
+
+        close.addEventListener('click', ()=>{
+            popUp.classList.remove('hide');
+        });
+        open.addEventListener('click', ()=>{
+            popUp.classList.add('hide');
+        })
+
+
+
+    </script>
+</body>
+</html>

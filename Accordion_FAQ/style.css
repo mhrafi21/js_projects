@@ -1,0 +1,37 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+.faq{
+    width: 300px;
+    overflow: hidden;
+}
+.ques{
+    background-color: #d7d9db;
+    padding:10px;
+    z-index:1;
+
+}
+.ans{
+    background-color: #e4e5e7;
+    padding:10px;
+    height: 0;
+    visibility: hidden;
+}
+.faq.show .ans{
+    height: auto;
+    visibility: visible;
+}
+::selection{
+    background-color: #a6ccec;
+    color:#0a7de2;
+}

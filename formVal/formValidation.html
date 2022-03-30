@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form action="">
+           <p>MATH NUMBER : <input type="text" id = 'math' required><br>
+            <span id = "alertNum" style = "color:red"></span>
+           </p> 
+           <p>PHYSICS NUMBER : <input type="text" id = 'physics' required><br>
+            <span id = "alertNum2" style = "color:red"></span>
+        </p> 
+           <button>Submit</button>
+        </form>
+    </div>
+    <script>
+        const physics = document.getElementById('physics');
+        const math = document.getElementById('math');
+        const alertNum = document.getElementById('alertNum');
+
+        math.addEventListener('input' , ()=>{
+            const mathNum = math.value;
+            if(mathNum > 100 && 0 < mathNum){
+              math.style.background = "red";
+              alertNum.innerText = `You're type wrong! Please type(0-100)`;
+              
+
+            }else{
+                math.style.background = 'none';
+                alertNum.innerText = '';
+            }
+        })
+
+        physics.addEventListener('input' , ()=>{
+            const physicsNum = physics.value;
+            if(physicsNum > 100 && 0 < physicsNum){
+                physics.style.background = "red";
+              alertNum2.innerText = `You're type wrong! Please type(0-100)`;
+              
+
+            }else{
+                physics.style.background = 'none';
+                alertNum.innerText = '';
+            }
+        })
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPT</title>
+</head>
+<body>
+    <input type="text"  name="" id="copyT" value = "copy the texts">
+    <button id = 'copyBtn'>Copy</button><br>   <br>    
+
+    <input type="text"  name="" id="cutT" value = "Cut the texts">
+    <button id = 'cutBtn'>Cut</button> <br>   <br>   
+
+    <input type = 'text' id = 'pasteT'>
+    <button id = 'pasteBtn'>Paste</button>
+
+
+
+
+
+
+
+    <script>    
+
+    // copy area start
+
+        const copyT = document.getElementById('copyT').value;
+        const copyBtn = document.getElementById('copyBtn');
+
+        copyBtn.addEventListener('click',()=>{
+           const c = navigator.clipboard.writeText(copyT);
+           alert('Copy Text successful!');
+        })
+
+        // copy area end
+
+        const cutT = document.getElementById('cutT');
+        const cutBtn = document.getElementById('cutBtn');
+
+        cutBtn.addEventListener('click', ()=>{
+            navigator.clipboard.writeText(cutT.value);
+            cutT.value = '';
+        })
+
+        // cut end area
+
+        const pasteT = document.getElementById('pasteT');
+        const pasteBtn = document.getElementById('pasteBtn');
+
+        pasteBtn.addEventListener('click', ()=>{
+            pasteT.value = ''
+            const pasteText = navigator.clipboard.readText(pasteT).then((text)=>{
+                pasteT.value = text;
+            })
+      
+            
+            
+        })
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+.div3{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0px);
+    transition: 1s;
+}
+.div3.show{
+    opacity: 1;
+    visibility: visible;
+    transform:translateY(-50px);
+}

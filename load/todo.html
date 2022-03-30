@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO</title>
+    <style>
+        .container{
+            background-color:#f4f4f4;
+            width:300px;
+            min-height: 400px;
+            padding:20px;
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id = "input"><button id = 'add'>Add</button>
+        <ul id = "items">
+           
+        </ul>
+    </div>
+
+    <script>
+        const add = document.getElementById('add');
+        add.addEventListener('click' , ()=>{
+        const text = document.getElementById('input').value;
+        const items = document.getElementById('items');
+
+            const li = document.createElement('li');
+             items.appendChild(li);
+             li.innerText = text;
+        })
+
+    </script>
+</body>
+</html>
