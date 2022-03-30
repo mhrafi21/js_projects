@@ -11,10 +11,10 @@
     </div>
     <script>
         const title = document.getElementById("title");
-        window.addEventListener("online", set());
-        window.addEventListener("offline", set());
+        window.addEventListener("online", set);
+        window.addEventListener("offline", set);
         function set(){
-            if(navigator.online){
+            if(navigator.onLine){
                 title.innerHTML = "You are online";
             }else{
                 title.innerHTML = "You are offline";
